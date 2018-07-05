@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			if(source.indexOf("www") != -1) {
 				myInput = myContext.getAssets().open("www/" + sqlDB.dbname);
 			} else {
-				File src = new File(source);
+				File src = new File(source + '/' + sqlDB.dbname);
 				myInput = new FileInputStream(src);
 			}
 			OutputStream myOutput = new FileOutputStream(database);
